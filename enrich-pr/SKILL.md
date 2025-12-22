@@ -47,12 +47,16 @@ Use this skill at the start of a coding session that might end with a commit or 
 
 ## When the user asks to open a PR
 
-- Use the ledger to draft a PR description that helps reviewers:
+- Pull from the ledger **and** current local context (diffs, commands run, user notes); don't rely on memory.
+- Build a concise, reviewer-friendly draft. Use a readable mix of short paragraphs plus bullets—only as many bullets as needed for scan-ability, not a fixed count.
+- Cover:
   - Summary of changes and intent
-  - Key files/sections to review first
+  - Key files/sections to review first with reasons
   - Risks and mitigations
   - Test coverage and gaps
   - Follow-ups or deployment notes
+- Use narrative for concepts and rationale; reserve bullets for checklists or parallel facts. Include concrete details (file paths, commands, outcomes) instead of vague statements.
+- If information is missing from the ledger, quickly scrape it from the conversation or ask for a 2–3 bullet fill-in before drafting.
 - Tailor to the target tool (GitHub CLI, MCP, Phabricator) but keep content tool-agnostic unless specified.
 
 ## Housekeeping
