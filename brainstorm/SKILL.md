@@ -38,3 +38,4 @@ Use this skill to guide a user from a rough idea to a clear design/spec by askin
 - Ask only one question per message.
 - Keep momentum: no long preambles or multi-paragraph lead-ins.
 - Use concrete language and avoid filler.
+- Do not announce the skill or preface with meta statements like "Using the brainstorm skill because...".

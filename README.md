@@ -3,7 +3,7 @@
 Home for custom skills used by Codex CLI and Claude-based agents. Skills here define workflows, utilities, and helpers that can be discovered by the agents at startup.
 
 ## What’s inside
-- `brainstorm/` – structured idea generation prompts and facilitation flow for exploring options quickly.
+- `brainstorm/` – structured idea generation prompts and facilitation flow for exploring options quickly, with concise questions and no meta skill preambles.
 - `enrich-pr/` – logging helper that keeps a running ledger of decisions, file changes, tests, and risks to streamline commit/PR summaries.
 - `plan/` – comprehensive implementation planning workflow with tasks, files to touch, tests, docs, and verification steps.
 
