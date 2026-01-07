@@ -29,9 +29,9 @@ Use this skill to guide a user from a rough idea to a clear design/spec by askin
    - After each section, ask whether it looks right so far before continuing.
    - Incorporate feedback and revise the next section accordingly.
 
-5. **Implementation plan (if/when requested)**
-   - If the user asks for an implementation plan, produce it only after the design/spec is confirmed.
-   - Structure the plan in phases with clear milestones and risks.
+5. **Confirm handoff to planning**
+   - After the final spec section is approved, ask one question: whether the user wants to proceed to an implementation plan (plan skill).
+   - If yes, provide a concise spec recap (goals, non-goals, UX, data/logic, constraints, acceptance criteria) to seed the plan.
 
 ## Style rules
 
