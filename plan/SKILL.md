@@ -21,6 +21,13 @@ Use this skill to produce a full, step-by-step implementation plan aimed at a ca
    - Create or update a plan document in `docs/plans/` as requested.
    - Assume the reader is new to the codebase and tools.
 
+4. **Beads handoff**
+   - If a bead already exists, update its design field with the plan path.
+   - If no bead exists and the work is multi-session or large, recommend creating a bead and ask whether to use a single bead or an epic with milestone beads.
+   - For sequential projects, prefer a single bead unless explicit checkpoints or handoffs are needed; if using milestones, add linear dependencies.
+   - Keep bead count low: one bead per major milestone, not per tiny task.
+   - In your response, provide a short bead mapping (titles + dependencies) when applicable.
+
 ## Plan requirements
 
 - Provide **bite-sized tasks** with clear ordering and rationale.
@@ -33,6 +40,7 @@ Use this skill to produce a full, step-by-step implementation plan aimed at a ca
 - Emphasize **DRY**, **YAGNI**, and **frequent commits**.
 - Use plain language; avoid jargon unless defined.
 - Provide testing guidance for engineers who are weak at test design.
+- Add a brief **Beads handoff** summary in your response when the work merits beads.
 
 ## Output structure (recommended)
 
@@ -41,6 +49,7 @@ Use this skill to produce a full, step-by-step implementation plan aimed at a ca
 - Implementation tasks (numbered)
 - Testing strategy and checkpoints
 - Rollout/risks (if applicable)
+- Beads handoff (if applicable)
 - Appendix: commands or references
 
 ## Style rules

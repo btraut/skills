@@ -29,9 +29,15 @@ Use this skill to guide a user from a rough idea to a clear design/spec by askin
    - After each section, ask whether it looks right so far before continuing.
    - Incorporate feedback and revise the next section accordingly.
 
-5. **Confirm handoff to planning**
-   - After the final spec section is approved, ask one question: whether the user wants to proceed to an implementation plan (plan skill).
-   - If yes, provide a concise spec recap (goals, non-goals, UX, data/logic, constraints, acceptance criteria) to seed the plan.
+5. **Beads + planning handoff**
+   - After the final spec section is approved, summarize the spec into bead fields: title, description, design, acceptance.
+   - Ask one multiple-choice question covering the next step (beads and/or plan). Example choices: create a single bead, create an epic + milestones, proceed to plan only, or pause.
+   - If beads are requested and granularity is unclear, ask a single follow-up question to choose between a single bead vs an epic with milestone beads.
+   - Decision rule for granularity:
+     - Single bead: 1-3 sessions, cohesive flow, minimal handoffs.
+     - Epic + milestones: longer work or clear checkpoints, even if sequential. Use linear dependencies if steps must be done in order.
+   - If a plan is requested, provide a concise spec recap (goals, non-goals, UX, data/logic, constraints, acceptance) to seed the plan.
+   - If a plan is created later, link it in the bead design field.
 
 ## Style rules
 
@@ -39,3 +45,4 @@ Use this skill to guide a user from a rough idea to a clear design/spec by askin
 - Keep momentum: no long preambles or multi-paragraph lead-ins.
 - Use concrete language and avoid filler.
 - Do not announce the skill or preface with meta statements like "Using the brainstorm skill because...".
+- When asking about beads/plan, use a single multiple-choice question; only follow up if bead granularity needs a choice.
