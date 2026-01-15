@@ -22,11 +22,9 @@ Use this skill to improve an existing Beads epic/issue set so implementers have 
    - Add missing design notes or decision context.
    - Split oversized issues; merge duplicates; remove fluff.
 
-4. **Iterate with a cap**
-   - Allow up to 5 review/refinement passes; after that, say you do not think it can be improved further.
-
-5. **Restart the agent**
-   - Complete the review, then stop. Recommend starting a fresh agent for the next task.
+4. **Single-pass review**
+   - Complete one focused pass in the current context.
+   - If additional passes are needed, call them out explicitly and recommend either re-running the review or using the `ralph` skill for isolated multi-pass work.
 
 ## Output expectations
 
