@@ -11,19 +11,21 @@ Use this skill to produce a full, step-by-step implementation plan aimed at a ca
 
 1. **Inspect the repo**
    - Scan the working directory for architecture, conventions, docs, and relevant code paths.
-   - Identify where plans live (e.g., `docs/plans/`).
+   - Identify the canonical spec/doc location in `docs/` and whether a spec already exists.
 
 2. **Clarify scope (if needed)**
    - Ask only the minimum questions needed to lock scope; prefer 1-3 concise questions.
    - If the user already provided a prompt or requirements, proceed without delay.
 
-3. **Write the plan into `docs/plans/`**
-   - Create or update a plan document in `docs/plans/` as requested.
+3. **Write the plan into `docs/`**
+   - If a spec already exists in `docs/`, append/merge the plan into that spec file.
+   - If no spec exists, create a single spec+plan document in `docs/` and use that going forward.
    - Assume the reader is new to the codebase and tools.
 
 4. **Beads handoff**
    - If a bead already exists, update its design field with the plan path.
    - If no bead exists and the work is multi-session or large, recommend creating a bead and ask whether to use a single bead or an epic with milestone beads.
+   - Recommend running the `beads-create` skill once the plan is finalized to translate it into Beads epics/issues.
    - For sequential projects, prefer a single bead unless explicit checkpoints or handoffs are needed; if using milestones, add linear dependencies.
    - Keep bead count low: one bead per major milestone, not per tiny task.
    - In your response, provide a short bead mapping (titles + dependencies) when applicable.
@@ -41,10 +43,11 @@ Use this skill to produce a full, step-by-step implementation plan aimed at a ca
 - Use plain language; avoid jargon unless defined.
 - Provide testing guidance for engineers who are weak at test design.
 - Add a brief **Beads handoff** summary in your response when the work merits beads.
+- Always keep the plan in the existing spec under `docs/`, or create a single spec+plan document in `docs/` if none exists.
 
 ## Output structure (recommended)
 
-- Title + short context summary
+- Title + short context summary (as a new section in the spec file)
 - Assumptions and constraints
 - Implementation tasks (numbered)
 - Testing strategy and checkpoints
