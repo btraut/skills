@@ -9,6 +9,7 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 - `plan/` – comprehensive implementation planning workflow with tasks, files to touch, tests, docs, verification steps, and beads handoff guidance (appends plans into existing specs in `docs/`).
 - `ship/` – ship workflow that commits changes, rebases onto production, fast-forwards production, pushes both branches, and returns to main.
 - `ralph/` – controller-driven Ralph loop for sequential codex exec subprocesses and multi-pass reviews.
+- `sentry-cli/` – investigate, triage, and resolve Sentry issues using sentry-cli.
 
 ## Using these skills
 1) Clone or place this repo where your agent looks for skills (e.g., `$CODEX_HOME/skills`).
@@ -19,6 +20,8 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight.
 
 ## Changelog
+- 2026-01-16: Updated sentry-cli skill preconditions to allow `sentry-cli login` auth.
+- 2026-01-16: Added sentry-cli skill for Sentry issue triage and resolution via sentry-cli.
 - 2026-01-15: Beads-review skill now uses a single-pass review and points multi-pass work to ralph or re-runs.
 - 2026-01-15: Plan skill now appends plans into existing specs in `docs/` and recommends beads-create handoff.
 - 2026-01-15: Added beads-create skill for translating plans into Beads epics/issues.
