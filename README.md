@@ -4,6 +4,7 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 
 ## What’s inside
 - `beads-create/` – translate finalized plans/specs into Beads epics and issues with dependencies and parallelization details.
+- `beads-implement/` – implement Beads tasks or epics from a bead id with per-task commits and minimal interruptions.
 - `beads-review/` – review and polish existing Beads epics/issues for clarity, completeness, and smooth implementation.
 - `brainstorm/` – structured idea generation and spec facilitation with concise questions plus a beads-aware handoff to planning once the spec is confirmed.
 - `plan/` – comprehensive implementation planning workflow with tasks, files to touch, tests, docs, verification steps, and beads handoff guidance (appends plans into existing specs in `docs/`).
@@ -17,9 +18,12 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 3) Follow each skill’s `SKILL.md` for usage details and any supporting assets or scripts.
 
 ## Beads integration
-Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight.
+Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills assume the canonical beads skill lives at `/Users/btraut/Development/skills-external/beads` for bd CLI workflow guidance.
 
 ## Changelog
+- 2026-01-21: Beads-implement skill now prompts a brief to-do list at the start of execution.
+- 2026-01-21: Beads skills now point to the external beads skill for bd CLI workflow guidance.
+- 2026-01-21: Added beads-implement skill for implementing beads tasks or epics with per-task commits.
 - 2026-01-17: Brainstorm skill now avoids asking questions that can be trivially answered by inspecting the repo or using tools.
 - 2026-01-16: Updated sentry-cli skill to align with official CLI docs (releases, debug files, sourcemaps, crons) and removed issue-triage API usage.
 - 2026-01-16: Updated sentry-cli skill preconditions to allow `sentry-cli login` auth.

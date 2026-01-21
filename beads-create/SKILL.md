@@ -9,23 +9,26 @@ Use this skill to import a plan into Beads as a well-structured set of epics and
 
 ## Workflow
 
-1. **Confirm the plan is ready**
+1. **Load beads guidance if needed**
+   - If bd CLI usage or bead structure is unclear, read `/Users/btraut/Development/skills-external/beads/SKILL.md` and follow its session protocol.
+
+2. **Confirm the plan is ready**
    - Ensure there is a finalized plan or spec outside Beads.
    - If the plan is still fuzzy, ask for revisions first and iterate up to 5 times before importing.
 
-2. **Translate the plan into Beads structure**
+3. **Translate the plan into Beads structure**
    - Create epics that map to major milestones or deliverables.
    - Create issues for concrete, implementable tasks.
    - Add dependencies, ordering constraints, and opportunities for parallel work.
 
-3. **Add implementation detail**
+4. **Add implementation detail**
    - Include design notes, assumptions, and acceptance criteria on each issue.
    - Make tasks small and unambiguous so a fresh agent can pick up a single issue.
 
-4. **Hand off to review**
+5. **Hand off to review**
    - Recommend running the `beads-review` skill to proofread and polish the filed beads.
 
-5. **Restart the agent**
+6. **Restart the agent**
    - Finish this task, then stop. Encourage a fresh agent for the next task to keep sessions small.
 
 ## Output expectations
