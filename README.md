@@ -20,6 +20,7 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight.
 
 ## Changelog
+- 2026-01-17: Brainstorm skill now avoids asking questions that can be trivially answered by inspecting the repo or using tools.
 - 2026-01-16: Updated sentry-cli skill to align with official CLI docs (releases, debug files, sourcemaps, crons) and removed issue-triage API usage.
 - 2026-01-16: Updated sentry-cli skill preconditions to allow `sentry-cli login` auth.
 - 2026-01-16: Added sentry-cli skill for Sentry issue triage and resolution via sentry-cli.

@@ -18,6 +18,7 @@ Use this skill to guide a user from a rough idea to a clear design/spec by askin
    - Prefer multiple-choice questions with 3-5 options; include an "Other: ____" option when helpful.
    - Use open-ended questions only when options would be misleading.
    - Sequence questions from highest-uncertainty to lowest-uncertainty.
+   - Do not ask questions that can be trivially answered by inspecting the repo or using available tools; look it up first.
    - Keep each question tightly scoped and decision-oriented.
 
 3. **Converge on understanding**
