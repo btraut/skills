@@ -11,6 +11,7 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 - `ship/` – ship workflow that commits changes, rebases onto production, fast-forwards production, pushes both branches, and returns to main.
 - `ralph/` – controller-driven Ralph loop for sequential codex exec subprocesses and multi-pass reviews.
 - `sentry-cli/` – release management, debug files/source maps, and cron check-ins via sentry-cli.
+- `sentry-issues-to-beads/` – scan unresolved Sentry issues and create Beads for actionable ones using sentry-cli.
 
 ## Using these skills
 1) Clone or place this repo where your agent looks for skills (e.g., `$CODEX_HOME/skills`).
@@ -21,6 +22,7 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills assume the canonical beads skill lives at `/Users/btraut/Development/skills-external/beads` for bd CLI workflow guidance.
 
 ## Changelog
+- 2026-01-22: Added sentry-issues-to-beads skill for creating Beads from actionable Sentry issues via sentry-cli.
 - 2026-01-21: Beads-implement skill now prompts a brief to-do list at the start of execution.
 - 2026-01-21: Beads skills now point to the external beads skill for bd CLI workflow guidance.
 - 2026-01-21: Added beads-implement skill for implementing beads tasks or epics with per-task commits.
