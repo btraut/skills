@@ -19,7 +19,7 @@ description: Use sentry-cli for release management, debug information files/sour
 - Ask before changing or deleting releases or artifacts.
 
 ## Quick audit
-- Run `sentry-cli --help` to confirm available subcommands (especially if the user expects an `api` subcommand).
+- Run `sentry-cli --help` to confirm available subcommands; do not assume a generic `api` command exists.
 - Run `sentry-cli info` to verify authentication, org/project defaults, and server URL.
 
 ## Core workflows

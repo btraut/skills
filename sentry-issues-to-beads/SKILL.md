@@ -9,7 +9,7 @@ description: Triage Sentry issues via sentry-cli and recommend actions. Use when
 
 1. **Confirm prerequisites**
    - Ensure `sentry-cli` is installed and authenticated (`sentry-cli info`).
-   - Run `sentry-cli --help` and confirm an `api` subcommand exists.
+   - Run `sentry-cli --help` and confirm the `issues` subcommand is available.
    - If org/project defaults are unclear, ask for the org slug and project slug(s).
 
 2. **Determine scope**
@@ -17,13 +17,14 @@ description: Triage Sentry issues via sentry-cli and recommend actions. Use when
    - Else if the user provides project slug(s), scope to those projects.
    - Else, use all unresolved issues across all projects in the org.
 
-3. **Fetch issues via the Sentry API**
+3. **Fetch issues via `sentry-cli issues list`**
    - Always include `is:unresolved` in the query.
-   - Use `sentry-cli api` with the syntax shown by `sentry-cli api --help` (either query params in the path or CLI flags).
    - Typical patterns:
-     - List issues: `sentry-cli api 0/issues/?query=is:unresolved&project=<project>` (repeat `project=` for multiple)
-     - Single issue: `sentry-cli api 0/issues/<issue_id>/`
-   - If pagination is required, follow the cursor/Link headers until complete or a user-specified limit.
+     - List issues (per project): `sentry-cli issues list -o <org> -p <project> --query "is:unresolved"`
+     - List issues (all projects in org): `sentry-cli issues list -o <org> --query "is:unresolved"`
+     - Single issue: `sentry-cli issues list -o <org> -p <project> --id <issue_id>`
+   - If pagination is required, use `--pages` and/or `--max-rows` to match the user-specified limit.
+   - If listing without `--project` fails, iterate per project instead.
 
 4. **Check for duplicates**
    - Look for existing beads that already track the issue (search by issue ID, short ID, or Sentry URL).
