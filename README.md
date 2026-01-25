@@ -8,7 +8,7 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 - `beads-review/` – review and polish existing Beads epics/issues for clarity, completeness, and smooth implementation.
 - `brainstorm/` – structured idea generation and spec facilitation with concise questions plus a beads-aware handoff to planning once the spec is confirmed.
 - `plan/` – comprehensive implementation planning workflow with tasks, files to touch, tests, docs, verification steps, and beads handoff guidance (appends plans into existing specs in `docs/`).
-- `ship/` – ship workflow that commits changes, rebases onto production, fast-forwards production, pushes both branches, and returns to main.
+- `ship/` – ship workflow that commits to local main and pushes to origin/main.
 - `ralph/` – controller-driven Ralph loop for sequential codex exec subprocesses and multi-pass reviews.
 - `sentry-cli/` – release management, debug files/source maps, and cron check-ins via sentry-cli.
 - `sentry-issues-to-beads/` – scan unresolved Sentry issues and create Beads for actionable ones using `sentry-cli issues list`.
@@ -22,6 +22,7 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills assume the canonical beads skill lives at `/Users/btraut/Development/skills-external/beads` for bd CLI workflow guidance.
 
 ## Changelog
+- 2026-01-25: Ship skill now commits to local main and pushes to origin/main (no production branch).
 - 2026-01-23: Updated Sentry skills to use `sentry-cli issues list` (no generic `api` subcommand).
 - 2026-01-22: Added sentry-issues-to-beads skill for creating Beads from actionable Sentry issues via sentry-cli.
 - 2026-01-21: Beads-implement skill now prompts a brief to-do list at the start of execution.
