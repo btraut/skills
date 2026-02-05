@@ -19,7 +19,7 @@ Invoke the skill as:
 
 The skill runner should pass the URL as the first argument to the Python script:
 
-`python3 skills/export-chatgpt/export_chatgpt.py <chatgpt.com share url>`
+`python3 skills/export-chatgpt/scripts/export_chatgpt.py <chatgpt.com share url>`
 
 ## Options
 
@@ -31,6 +31,6 @@ The skill runner should pass the URL as the first argument to the Python script:
 
 `export-chatgpt https://chatgpt.com/share/6982c1ad-265c-800b-9f52-103f81d4386e`
 
-`python3 skills/export-chatgpt/export_chatgpt.py https://chatgpt.com/share/6982c1ad-265c-800b-9f52-103f81d4386e --format json --out ./export.json`
+`python3 skills/export-chatgpt/scripts/export_chatgpt.py https://chatgpt.com/share/6982c1ad-265c-800b-9f52-103f81d4386e --format json --out ./export.json`
 
-`python3 skills/export-chatgpt/export_chatgpt.py https://chatgpt.com/share/6982c1ad-265c-800b-9f52-103f81d4386e --format both --out ./export`
+`python3 skills/export-chatgpt/scripts/export_chatgpt.py https://chatgpt.com/share/6982c1ad-265c-800b-9f52-103f81d4386e --format both --out ./export`
