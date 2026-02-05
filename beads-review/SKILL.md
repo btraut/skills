@@ -27,7 +27,7 @@ Use this skill to improve an existing Beads epic/issue set so implementers have 
 
 5. **Single-pass review**
    - Complete one focused pass in the current context.
-   - If additional passes are needed, call them out explicitly and recommend either re-running the review or using the `ralph` skill for isolated multi-pass work.
+   - If additional passes are needed, call them out explicitly and recommend re-running the review after updates or scheduling a separate pass.
 
 ## Output expectations
 

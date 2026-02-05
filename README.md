@@ -9,7 +9,6 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 - `brainstorm/` – structured idea generation and spec facilitation with concise questions plus a beads-aware handoff to planning once the spec is confirmed.
 - `plan/` – comprehensive implementation planning workflow with tasks, files to touch, tests, docs, verification steps, and beads handoff guidance (appends plans into existing specs in `docs/`).
 - `ship/` – ship workflow that commits to local main and pushes to origin/main.
-- `ralph/` – controller-driven Ralph loop for sequential codex exec subprocesses and multi-pass reviews.
 - `sentry-cli/` – release management, debug files/source maps, and cron check-ins via sentry-cli.
 - `sentry-issues-to-beads/` – scan unresolved Sentry issues and create Beads for actionable ones using `sentry-cli issues list`.
 
@@ -22,6 +21,9 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills assume the canonical beads skill lives at `/Users/btraut/Development/skills-external/beads` for bd CLI workflow guidance.
 
 ## Changelog
+- 2026-02-04: Removed ralph skill and updated beads-review guidance for multi-pass reviews.
+- 2026-01-30: Brainstorm skill now routes questions through request_user_input (Codex) or AskUserQuestion (Claude).
+- 2026-01-28: Beads-create now requires epic children to be created as hierarchical dotted IDs (EPIC.N).
 - 2026-01-25: Ship skill now commits to local main and pushes to origin/main (no production branch).
 - 2026-01-23: Updated Sentry skills to use `sentry-cli issues list` (no generic `api` subcommand).
 - 2026-01-22: Added sentry-issues-to-beads skill for creating Beads from actionable Sentry issues via sentry-cli.
