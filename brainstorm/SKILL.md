@@ -20,6 +20,7 @@ Use this skill to guide a user from a rough idea to a clear design/spec by askin
    - Sequence questions from highest-uncertainty to lowest-uncertainty.
    - Do not ask questions that can be trivially answered by inspecting the repo or using available tools; look it up first.
    - Keep each question tightly scoped and decision-oriented.
+   - For Claude, ask questions via AskUserQuestion.
 
 3. **Converge on understanding**
    - Once the idea is clear enough to describe a design/spec, stop asking questions.

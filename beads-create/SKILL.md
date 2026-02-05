@@ -19,6 +19,12 @@ Use this skill to import a plan into Beads as a well-structured set of epics and
 3. **Translate the plan into Beads structure**
    - Create epics that map to major milestones or deliverables.
    - Create issues for concrete, implementable tasks.
+   - **Hierarchy rule**: When an epic has child milestones/tasks, create them as
+     hierarchical children (dotted IDs like `EPIC.1`, `EPIC.2`) rather than
+     separate top-level issues with only parent-child deps. Follow the bd CLI
+     “Create epic with hierarchical child tasks” flow (create the epic, then
+     create children so bd auto-assigns `EPIC.N` IDs). Verify the returned IDs;
+     if bd doesn’t assign dotted IDs, stop and ask the user how to proceed.
    - Add dependencies, ordering constraints, and opportunities for parallel work.
 
 4. **Add implementation detail**
