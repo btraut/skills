@@ -1,59 +1,73 @@
 ---
 name: plan
-description: Write comprehensive implementation plans for a project or feature. Use when the user wants a detailed plan for execution (tasks, files to touch, code/tests/docs, testing strategy) especially for engineers with minimal project context.
+description: Break a goal into a beads-ready set of work items with clear scope, deps, acceptance criteria, and test/verification steps. Use when the user wants a detailed execution breakdown (tasks, files to touch, tests, checks), especially for engineers with minimal project context.
 ---
 
 # Plan
 
-Use this skill to produce a full, step-by-step implementation plan aimed at a capable engineer who lacks project/tooling/domain context and needs explicit guidance.
+Use this skill to produce a high-quality task breakdown. The point is not "a markdown file", it's work items that are the right size and have enough detail to implement without flailing.
 
 ## Workflow
 
 1. **Inspect the repo**
    - Scan the working directory for architecture, conventions, docs, and relevant code paths.
-   - Identify the canonical spec/doc location in `docs/` and whether a spec already exists.
+   - Identify any existing spec/doc location (often `docs/`) and whether something already exists you should align to.
 
 2. **Clarify scope (if needed)**
    - Ask only the minimum questions needed to lock scope; prefer 1-3 concise questions.
    - If the user already provided a prompt or requirements, proceed without delay.
 
-3. **Write the plan into `docs/`**
-   - If a spec already exists in `docs/`, append/merge the plan into that spec file.
-   - If no spec exists, create a single spec+plan document in `docs/` and use that going forward.
-   - Assume the reader is new to the codebase and tools.
+3. **Break the goal into beads-ready work items**
+   - Produce a small set of milestones/epics and implementable issues with:
+     - clear ordering/dependencies
+     - explicit acceptance criteria
+     - concrete verification steps (commands + expected results)
+   - Keep items sized so one agent can finish one item in 1-3 hours.
+   - Prefer fewer, sharper items over a giant list of micro-tasks.
 
-4. **Beads handoff**
+4. **Add the details that stop future-you from hating present-you**
+   - For each work item, include:
+     - the likely files/areas to touch (or where new code should live)
+     - the key code changes (not prose: the actual moves)
+     - tests to add/run and how to validate locally
+     - risky parts and how to de-risk them (spikes, flags, smaller PRs)
+
+5. **Optional: write/append to a spec doc**
+   - Only do this if the user explicitly wants a doc artifact, or there is already a canonical spec you should update.
+   - If you do write a doc, keep it single-source-of-truth: append/merge into the existing spec rather than creating a second competing doc.
+
+6. **Beads handoff (usual output)**
    - If a bead already exists, update its design field with the plan path.
    - If no bead exists and the work is multi-session or large, recommend creating a bead and ask whether to use a single bead or an epic with milestone beads.
-   - Recommend running the `beads-create` skill once the plan is finalized to translate it into Beads epics/issues.
+   - Recommend running the `beads-create` skill to file the work items into Beads (and do the polish pass).
    - For sequential projects, prefer a single bead unless explicit checkpoints or handoffs are needed; if using milestones, add linear dependencies.
    - Keep bead count low: one bead per major milestone, not per tiny task.
    - In your response, provide a short bead mapping (titles + dependencies) when applicable.
 
 ## Plan requirements
 
-- Provide **bite-sized tasks** with clear ordering and rationale.
-- For each task, specify:
-  - **Files to touch** (or where to add new files)
-  - **Code changes** to make
-  - **Tests** to write/run (favor TDD and test design guidance)
-  - **Docs** to consult or update
-  - **How to verify** (commands, expected outcomes)
+- Provide **beads-ready tasks** with clear ordering and rationale.
+- Each task must include:
+  - **Scope**: what is in/out
+  - **Acceptance criteria**: how we know it is done
+  - **Implementation notes**: files/areas to touch + key code changes
+  - **Tests/verification**: what to run and what success looks like
 - Emphasize **DRY**, **YAGNI**, and **frequent commits**.
 - Use plain language; avoid jargon unless defined.
 - Provide testing guidance for engineers who are weak at test design.
 - Add a brief **Beads handoff** summary in your response when the work merits beads.
-- Always keep the plan in the existing spec under `docs/`, or create a single spec+plan document in `docs/` if none exists.
+- If a doc artifact is requested, write/append it; otherwise, optimize for a clean work breakdown.
 
 ## Output structure (recommended)
 
-- Title + short context summary (as a new section in the spec file)
+- Goal + short context summary
+- Non-goals (optional but useful)
 - Assumptions and constraints
-- Implementation tasks (numbered)
-- Testing strategy and checkpoints
-- Rollout/risks (if applicable)
-- Beads handoff (if applicable)
-- Appendix: commands or references
+- Work items (milestones/epics + issues) with deps
+- Testing and verification strategy
+- Risks/rollout (if applicable)
+- Beads mapping (what to create, what depends on what)
+- Open questions (only if truly blocking)
 
 ## Style rules
 

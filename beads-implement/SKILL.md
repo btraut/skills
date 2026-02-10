@@ -9,27 +9,61 @@ Use this skill to execute work from a bead or epic id with minimal back-and-fort
 
 ## Workflow
 
-1. **Load beads guidance if needed**
-   - If bd CLI usage or bead structure is unclear, read `/Users/btraut/Development/skills-external/beads/SKILL.md` and follow its session protocol.
+1. **Prime bd (always)**
+   - Run `bd prime` first. It is the fastest way to get the current "how to start this bead" primer.
+   - If `bd prime` is unavailable or confusing, fall back to reading `/Users/btraut/Development/skills-external/beads/SKILL.md`.
 
 2. **Open the bead**
-   - Read the title, description, acceptance criteria, and dependencies.
+   - Use `bd show <id>` and read the title, description, acceptance criteria, and dependencies.
    - If required info is missing or a dependency blocks progress, ask a single targeted question and wait.
 
-3. **Create a brief to-do list**
+3. **Start work in Beads**
+   - Mark the bead `in_progress` if your bd workflow supports it (check `bd prime` / `bd update --help`).
+   - Add a short note on your intended approach if the bead is ambiguous.
+
+4. **Create a brief to-do list**
    - At the start of execution, create a short to-do list of the tasks/sub-tasks you plan to complete and update it as you go.
 
-4. **Decide scope**
+5. **Decide scope**
    - If the bead is a single task, implement it directly.
    - If the bead is an epic, identify all sub-tasks and implement them in dependency order.
 
-5. **Implement and commit**
-   - For each task/sub-task: implement, run relevant checks/tests, then commit.
-   - Use one commit per task; include the bead id in the commit message.
+6. **Delegate aggressively (use sub-agents)**
+   - If the work splits cleanly, spawn sub-agents instead of serializing everything in your own head.
+   - Good sub-agent targets: repo exploration, API/library doc lookup, reproducer creation, test strategy, narrow refactors with a clear file list.
+   - Give each sub-agent explicit ownership (files + expected output), and merge their results.
 
-6. **Communicate only when needed**
+7. **Implement, commit, and write notes (repeat per task/sub-task)**
+   - Implement, run relevant checks/tests, then commit.
+   - One commit per task/sub-task.
+   - Commit message: include the bead id in the subject.
+   - Commit body: write real notes (what changed, why, tests run, follow-ups/risk).
+   - After the commit, add the same notes to the bead (so the bead survives compaction and future handoffs). Use `bd update <id>` and whatever flag/subcommand your bd version uses for notes (check `bd prime`).
+
+   Minimal commit template:
+
+   ```text
+   <BEAD-ID>: <imperative summary>
+
+   Why:
+   - ...
+
+   What:
+   - ...
+
+   Tests:
+   - ...
+
+   Notes/Risks:
+   - ...
+   ```
+
+8. **Communicate only when needed**
    - Do not interrupt the user while work is progressing.
    - Only pause to ask for help when blocked, when information is missing, or when a meaningful decision is required.
 
-7. **Report progress**
+9. **Close out**
+   - When complete, close the bead (or mark it done) with a clear reason, then `bd sync` at session end.
+
+10. **Report progress**
    - Provide a concise summary of completed tasks, commits made, and what remains (if anything).
