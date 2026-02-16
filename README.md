@@ -8,6 +8,7 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 - `brainstorm/` – structured idea generation and spec facilitation with concise questions plus a beads-aware handoff to planning once the spec is confirmed.
 - `export-chatgpt/` – export a ChatGPT shared conversation to Markdown or JSON.
 - `plan/` – comprehensive implementation planning workflow with tasks, files to touch, tests, docs, verification steps, and beads handoff guidance (appends plans into existing specs in `docs/`).
+- `swarm/` – orchestrate multi-agent code review with scope detection, intent discovery, dynamic persona selection, and merged severity-ordered reporting.
 
 ## Using these skills
 1) Clone or place this repo where your agent looks for skills (e.g., `$CODEX_HOME/skills`).
@@ -18,6 +19,9 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills assume the canonical beads skill lives at `/Users/btraut/Development/skills-external/beads` for bd CLI workflow guidance.
 
 ## Changelog
+- 2026-02-16: Swarm now uses dynamic persona selection without mandatory baselines, P0-P3-only outputs (no overall verdict), coherent-ahead-commit scope auto-pick rules, and confidence gating that suppresses findings below 0.50.
+- 2026-02-15: Expanded swarm with scope detection rules, intent discovery, persona catalog/selection, sub-agent cap handling, and standardized reviewer/manager output templates.
+- 2026-02-15: Added swarm skill for orchestrating multi-agent, persona-based code review workflows.
 - 2026-02-10: Plan skill now prioritizes a beads-ready task breakdown over writing a `docs/` markdown artifact.
 - 2026-02-10: beads-implement now runs `bd prime`, encourages sub-agents, and requires detailed notes in both git commits and the bead.
 - 2026-02-10: Folded beads-review into beads-create; removed beads-review skill.
