@@ -15,10 +15,26 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 2) Launch Codex or Claude with skills enabled; they will auto-discover entries in this directory.
 3) Follow each skill’s `SKILL.md` for usage details and any supporting assets or scripts.
 
+## Skill versioning
+Every skill directory includes a `VERSION` file containing the canonical SemVer for that skill.
+
+- Bump `MAJOR` for breaking workflow/contract changes.
+- Bump `MINOR` for backward-compatible new capability.
+- Bump `PATCH` for backward-compatible fixes/clarifications.
+
+Quickly list local skill versions:
+
+```bash
+for d in */; do
+  [ -f "$d/VERSION" ] && printf "%-20s %s\n" "${d%/}" "$(cat "$d/VERSION")"
+done | sort
+```
+
 ## Beads integration
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills assume the canonical beads skill lives at `/Users/btraut/Development/skills-external/beads` for bd CLI workflow guidance.
 
 ## Changelog
+- 2026-02-16: Added per-skill `VERSION` files for all current skills and documented mandatory SemVer bump rules in `AGENTS.md` and this README.
 - 2026-02-16: Renamed `swarm` skill to `review-team` (folder and frontmatter name) and updated identity labels across its docs/contracts.
 - 2026-02-16: Review Team v2 (formerly Swarm) added deterministic preflight risk modeling, explicit persona scoring thresholds, assignment matrix planning, JSON reviewer output schema, merge normalization and arbiter-pass rules, action synthesis guidance, expanded severity/output contracts, and three new personas (correctness, dependency-supply-chain, observability) with checklist-based reviewer instructions.
 - 2026-02-16: Review Team (formerly Swarm) uses dynamic persona selection without mandatory baselines, P0-P3-only outputs (no overall verdict), coherent-ahead-commit scope auto-pick rules, and confidence gating that suppresses findings below 0.50.
