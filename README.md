@@ -6,9 +6,11 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 - `beads-create/` – translate finalized plans/specs into Beads epics/issues and do the polish pass (clarity, sizing, acceptance criteria, deps).
 - `beads-implement/` – implement Beads tasks or epics from a bead id with per-task commits and minimal interruptions.
 - `brainstorm/` – structured idea generation and spec facilitation with concise questions plus a beads-aware handoff to planning once the spec is confirmed.
+- `design-system-extraction-sweep/` – sweep UI duplication and extract reusable components/tokens into shared design system primitives.
+- `docs-hygiene-sweep/` – keep canonical docs current, archive stale initiative docs, and enforce lifecycle lane correctness.
 - `export-chatgpt/` – export a ChatGPT shared conversation to Markdown or JSON.
-- `plan/` – comprehensive implementation planning workflow with tasks, files to touch, tests, docs, verification steps, and beads handoff guidance (appends plans into existing specs in `docs/`).
 - `review-team/` – orchestrate multi-agent code review with scope and intent discovery, deterministic preflight risk tagging, weighted persona selection, structured reviewer JSON output, merge normalization with arbitration, and action-first reporting.
+- `ssr-first-response-audit/` – verify SSR routes return meaningful first-response HTML, including auth-aware pages, without client-only loading flashes.
 
 ## Using these skills
 1) Clone or place this repo where your agent looks for skills (e.g., `$CODEX_HOME/skills`).
@@ -34,6 +36,8 @@ done | sort
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills assume the canonical beads skill lives at `/Users/btraut/Development/skills-external/beads` for bd CLI workflow guidance.
 
 ## Changelog
+- 2026-02-19: Removed `plan` skill from this repository.
+- 2026-02-19: Added `docs-hygiene-sweep`, `design-system-extraction-sweep`, and `ssr-first-response-audit` skills based on recurring maintenance workflows.
 - 2026-02-16: Added per-skill `VERSION` files for all current skills and documented mandatory SemVer bump rules in `AGENTS.md` and this README.
 - 2026-02-16: Renamed `swarm` skill to `review-team` (folder and frontmatter name) and updated identity labels across its docs/contracts.
 - 2026-02-16: Review Team v2 (formerly Swarm) added deterministic preflight risk modeling, explicit persona scoring thresholds, assignment matrix planning, JSON reviewer output schema, merge normalization and arbiter-pass rules, action synthesis guidance, expanded severity/output contracts, and three new personas (correctness, dependency-supply-chain, observability) with checklist-based reviewer instructions.
