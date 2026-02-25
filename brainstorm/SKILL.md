@@ -16,6 +16,8 @@ Use this skill to guide a user from a rough idea to a clear design/spec by askin
 2. **Ask refining questions (one per message)**
    - Ask exactly one question per response.
    - Prefer multiple-choice questions with 3-5 options; include an "Other: ____" option when helpful.
+   - For multiple-choice questions, mark exactly one option as recommended so the user has a clear default.
+   - In Codex `request_user_input`, mark the recommended choice by suffixing the label with `(Recommended)`. In Claude `AskUserQuestion`, use an explicit `recommended` flag when available or clearly label one option as recommended.
    - Use open-ended questions only when options would be misleading.
    - Sequence questions from highest-uncertainty to lowest-uncertainty.
    - Do not ask questions that can be trivially answered by inspecting the repo or using available tools; look it up first.
@@ -33,7 +35,7 @@ Use this skill to guide a user from a rough idea to a clear design/spec by askin
 
 5. **Beads + planning handoff**
    - After the final spec section is approved, summarize the spec into bead fields: title, description, design, acceptance.
-   - Ask one multiple-choice question covering the next step (beads and/or plan). Example choices: create a single bead, create an epic + milestones, proceed to plan only, or pause.
+   - Ask one multiple-choice question covering the next step (beads and/or plan), and mark one option as recommended. Example choices: create a single bead, create an epic + milestones, proceed to plan only, or pause.
    - If beads are requested and granularity is unclear, ask a single follow-up question to choose between a single bead vs an epic with milestone beads.
    - Decision rule for granularity:
      - Single bead: 1-3 sessions, cohesive flow, minimal handoffs.
@@ -48,3 +50,4 @@ Use this skill to guide a user from a rough idea to a clear design/spec by askin
 - Use concrete language and avoid filler.
 - Do not announce the skill or preface with meta statements like "Using the brainstorm skill because...".
 - When asking about beads/plan, use a single multiple-choice question; only follow up if bead granularity needs a choice.
+- For each multiple-choice question, ensure exactly one option is explicitly marked as recommended.
