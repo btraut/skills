@@ -6,11 +6,8 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 - `beads-create/` – translate finalized plans/specs into Beads epics/issues and do the polish pass (clarity, sizing, acceptance criteria, deps).
 - `beads-implement/` – implement Beads tasks or epics from a bead id with per-task commits and minimal interruptions.
 - `brainstorm/` – structured idea generation and spec facilitation with concise questions, explicit recommended options, and a beads-aware handoff to planning once the spec is confirmed.
-- `design-system-extraction-sweep/` – sweep UI duplication and extract reusable components/tokens into shared design system primitives.
-- `docs-hygiene-sweep/` – keep canonical docs current, archive stale initiative docs, and enforce lifecycle lane correctness.
 - `export-chatgpt/` – export a ChatGPT shared conversation to Markdown or JSON.
 - `review-team/` – orchestrate multi-agent code review with scope and intent discovery, deterministic preflight risk tagging, weighted persona selection, structured reviewer JSON output, merge normalization with arbitration, and action-first reporting.
-- `ssr-first-response-audit/` – verify SSR routes return meaningful first-response HTML, including auth-aware pages, without client-only loading flashes.
 
 ## Using these skills
 1) Clone or place this repo where your agent looks for skills (e.g., `$CODEX_HOME/skills`).
@@ -36,6 +33,7 @@ done | sort
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills assume the canonical beads skill lives at `/Users/btraut/Development/skills-external/beads` for bd CLI workflow guidance.
 
 ## Changelog
+- 2026-02-27: Corrected the "What’s inside" list to match the skills currently present in this repository.
 - 2026-02-25: Brainstorm skill now requires exactly one recommended option on each multiple-choice prompt (including beads/plan handoff), with explicit labeling guidance for Codex and Claude.
 - 2026-02-19: Removed `plan` skill from this repository.
 - 2026-02-19: Added `docs-hygiene-sweep`, `design-system-extraction-sweep`, and `ssr-first-response-audit` skills based on recurring maintenance workflows.
