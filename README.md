@@ -9,10 +9,13 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 - `export-chatgpt/` – export a ChatGPT shared conversation to Markdown or JSON.
 - `review-team/` – orchestrate multi-agent code review with scope and intent discovery, deterministic preflight risk tagging, weighted persona selection, structured reviewer JSON output, merge normalization with arbitration, and action-first reporting.
 
-## Using these skills
-1) Clone or place this repo where your agent looks for skills (e.g., `$CODEX_HOME/skills`).
-2) Launch Codex or Claude with skills enabled; they will auto-discover entries in this directory.
-3) Follow each skill’s `SKILL.md` for usage details and any supporting assets or scripts.
+## Installing these skills
+
+```bash
+npx skills add btraut/skills
+```
+
+Fallback: clone or place this repo in your agent's skills directory, such as `$CODEX_HOME/skills`.
 
 ## Skill versioning
 Every skill directory includes a `VERSION` file containing the canonical SemVer for that skill.
@@ -33,6 +36,7 @@ done | sort
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills defer to the official Beads GitHub repo at `https://github.com/steveyegge/beads` for bd CLI workflow guidance.
 
 ## Changelog
+- 2026-03-09: README now uses a shorter `npx skills add btraut/skills` install flow as the primary path, with manual cloning kept as fallback.
 - 2026-03-08: Beads-related docs now defer to `bd prime` and the official upstream GitHub repo `steveyegge/beads`; removed hard-coded local filesystem paths and repo-local workflow assumptions.
 - 2026-02-27: Corrected the "What’s inside" list to match the skills currently present in this repository.
 - 2026-02-25: Brainstorm skill now requires exactly one recommended option on each multiple-choice prompt (including beads/plan handoff), with explicit labeling guidance for Codex and Claude.
