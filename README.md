@@ -30,9 +30,10 @@ done | sort
 ```
 
 ## Beads integration
-Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills assume the canonical beads skill lives at `/Users/btraut/Development/skills-external/beads` for bd CLI workflow guidance.
+Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills defer to the official Beads GitHub repo at `https://github.com/steveyegge/beads` for bd CLI workflow guidance.
 
 ## Changelog
+- 2026-03-08: Beads-related docs now defer to `bd prime` and the official upstream GitHub repo `steveyegge/beads`; removed hard-coded local filesystem paths and repo-local workflow assumptions.
 - 2026-02-27: Corrected the "What’s inside" list to match the skills currently present in this repository.
 - 2026-02-25: Brainstorm skill now requires exactly one recommended option on each multiple-choice prompt (including beads/plan handoff), with explicit labeling guidance for Codex and Claude.
 - 2026-02-19: Removed `plan` skill from this repository.

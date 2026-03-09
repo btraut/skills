@@ -10,7 +10,7 @@ Use this skill to create Beads from a plan/spec and do the review pass so implem
 ## Workflow
 
 1. **Load beads guidance if needed**
-   - If bd CLI usage or bead structure is unclear, read `/Users/btraut/Development/skills-external/beads/SKILL.md` and follow its session protocol.
+   - If bd CLI usage or bead structure is unclear, consult the official Beads GitHub repo at `https://github.com/steveyegge/beads` and follow the documented workflow for your installed `bd` version.
 
 2. **Decide which mode you are in**
    - If the user has a finalized plan/spec and wants Beads filed: do Create mode.

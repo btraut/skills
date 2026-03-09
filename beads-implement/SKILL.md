@@ -11,7 +11,7 @@ Use this skill to execute work from a bead or epic id with minimal back-and-fort
 
 1. **Prime bd (always)**
    - Run `bd prime` first. It is the fastest way to get the current "how to start this bead" primer.
-   - If `bd prime` is unavailable or confusing, fall back to reading `/Users/btraut/Development/skills-external/beads/SKILL.md`.
+   - If `bd prime` is unavailable or confusing, consult the official Beads GitHub repo at `https://github.com/steveyegge/beads` for workflow guidance.
 
 2. **Open the bead**
    - Use `bd show <id>` and read the title, description, acceptance criteria, and dependencies.
@@ -63,7 +63,9 @@ Use this skill to execute work from a bead or epic id with minimal back-and-fort
    - Only pause to ask for help when blocked, when information is missing, or when a meaningful decision is required.
 
 9. **Close out**
-   - When complete, close the bead (or mark it done) with a clear reason, then `bd sync` at session end.
+   - When complete, close the bead (or mark it done) with a clear reason.
+   - After closing, run the session-end sync step recommended by `bd prime` for your installed `bd` version.
+   - If `bd prime` is unavailable, verify the session-close command in the official Beads GitHub repo at `https://github.com/steveyegge/beads` before ending the session.
 
 10. **Report progress**
    - Provide a concise summary of completed tasks, commits made, and what remains (if anything).
