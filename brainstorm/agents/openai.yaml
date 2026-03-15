@@ -1,0 +1,7 @@
+interface:
+  display_name: "Brainstorm"
+  short_description: "Shape ideas into clear specs"
+  default_prompt: "Use $brainstorm to turn this rough idea into a concrete spec."
+
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Review Team"
+  short_description: "Run a deep multi-agent code review"
+  default_prompt: "Use $review-team to review this change for bugs, risks, and missing tests."
+
+policy:
+  allow_implicit_invocation: false

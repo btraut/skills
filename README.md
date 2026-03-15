@@ -36,6 +36,7 @@ done | sort
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills defer to the official Beads GitHub repo at `https://github.com/steveyegge/beads` for bd CLI workflow guidance.
 
 ## Changelog
+- 2026-03-15: Added `agents/openai.yaml` for `brainstorm` and `review-team`, with `allow_implicit_invocation: false` so both skills require explicit invocation in Codex.
 - 2026-03-09: README now uses a shorter `npx skills add btraut/skills` install flow as the primary path, with manual cloning kept as fallback.
 - 2026-03-08: Beads-related docs now defer to `bd prime` and the official upstream GitHub repo `steveyegge/beads`; removed hard-coded local filesystem paths and repo-local workflow assumptions.
 - 2026-02-27: Corrected the "What’s inside" list to match the skills currently present in this repository.
