@@ -4,7 +4,7 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 
 ## What’s inside
 - `beads-create/` – translate finalized plans/specs into Beads epics/issues and do the polish pass (clarity, sizing, acceptance criteria, deps).
-- `beads-implement/` – implement Beads tasks or epics from a bead id with per-task commits and minimal interruptions.
+- `beads-implement/` – implement Beads tasks or epics from a bead id with per-task commits, strict main-agent orchestration, and per-child review gates before advancing.
 - `brainstorm/` – structured idea generation and spec facilitation with concise questions, explicit recommended options, and a beads-aware handoff to planning once the spec is confirmed.
 - `export-chatgpt/` – export a ChatGPT shared conversation to Markdown or JSON.
 - `review-team/` – orchestrate multi-agent code review with scope and intent discovery, deterministic preflight risk tagging, weighted persona selection, structured reviewer JSON output, merge normalization with arbitration, and action-first reporting.
@@ -37,6 +37,7 @@ Use beads for work that spans sessions, has dependencies, or needs durable conte
 
 ## Changelog
 - 2026-03-15: Added `agents/openai.yaml` for `brainstorm` and `review-team`, with `allow_implicit_invocation: false` so both skills require explicit invocation in Codex.
+- 2026-03-28: beads-implement now requires narrow sub-agent delegation, explicit main-agent authority over sequencing/closure/integration, and a review gate on each child bead before advancing; bumped `beads-implement` to `1.1.0`.
 - 2026-03-09: README now uses a shorter `npx skills add btraut/skills` install flow as the primary path, with manual cloning kept as fallback.
 - 2026-03-08: Beads-related docs now defer to `bd prime` and the official upstream GitHub repo `steveyegge/beads`; removed hard-coded local filesystem paths and repo-local workflow assumptions.
 - 2026-02-27: Corrected the "What’s inside" list to match the skills currently present in this repository.
