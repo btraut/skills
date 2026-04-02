@@ -33,9 +33,10 @@ done | sort
 ```
 
 ## Beads integration
-Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. Beads-related skills defer to the official Beads GitHub repo at `https://github.com/steveyegge/beads` for bd CLI workflow guidance.
+Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. The `beads-create` and `beads-implement` skills now detect whether the workspace is using classic Beads (`bd`) or beads_rust (`br`) and branch to the appropriate local skill or local CLI guidance instead of assuming one CLI.
 
 ## Changelog
+- 2026-04-01: `beads-create` and `beads-implement` now detect `bd` vs `br` at runtime, keep `bd`-specific dotted-child guidance where it belongs, use `br`-specific workflow rules when the Rust tracker is installed, and prefer loaded local skills or local CLI help over web docs.
 - 2026-03-15: Added `agents/openai.yaml` for `brainstorm` and `review-team`, with `allow_implicit_invocation: false` so both skills require explicit invocation in Codex.
 - 2026-03-28: beads-implement now requires narrow sub-agent delegation, explicit main-agent authority over sequencing/closure/integration, and a review gate on each child bead before advancing; bumped `beads-implement` to `1.1.0`.
 - 2026-03-09: README now uses a shorter `npx skills add btraut/skills` install flow as the primary path, with manual cloning kept as fallback.
