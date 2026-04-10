@@ -1,5 +1,5 @@
 {
-  "name": "bt-plugin",
+  "name": "bt",
   "version": "0.1.0",
   "description": "BTraut workflow plugin with separate WHAT, HOW, work, and spitball skills.",
   "skills": "./skills/"
