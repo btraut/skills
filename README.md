@@ -3,11 +3,15 @@
 Home for custom skills used by Codex CLI and Claude-based agents. Skills here define workflows, utilities, and helpers that can be discovered by the agents at startup.
 
 ## What’s inside
-- `beads-create/` – translate finalized plans/specs into Beads epics/issues and do the polish pass (clarity, sizing, acceptance criteria, deps).
-- `beads-implement/` – implement Beads tasks or epics from a bead id with per-task commits, strict main-agent orchestration, and per-child review gates before advancing.
-- `brainstorm/` – structured idea generation and spec facilitation with concise questions, explicit recommended options, and a beads-aware handoff to planning once the spec is confirmed.
-- `export-chatgpt/` – export a ChatGPT shared conversation to Markdown or JSON.
-- `review-team/` – orchestrate multi-agent code review with scope and intent discovery, deterministic preflight risk tagging, weighted persona selection, structured reviewer JSON output, merge normalization with arbitration, and action-first reporting.
+- `skills/` – standalone skills shipped directly by this repo.
+- `plugins/` – plugin bundles with their own packaged skills and metadata.
+
+Current standalone skills:
+- `skills/beads-create/` – translate finalized plans/specs into Beads epics/issues and do the polish pass (clarity, sizing, acceptance criteria, deps).
+- `skills/beads-implement/` – implement Beads tasks or epics from a bead id with per-task commits, strict main-agent orchestration, and per-child review gates before advancing.
+- `skills/brainstorm/` – structured idea generation and spec facilitation with concise questions, explicit recommended options, and a beads-aware handoff to planning once the spec is confirmed.
+- `skills/export-chatgpt/` – export a ChatGPT shared conversation to Markdown or JSON.
+- `skills/review-team/` – orchestrate multi-agent code review with scope and intent discovery, deterministic preflight risk tagging, weighted persona selection, structured reviewer JSON output, merge normalization with arbitration, and action-first reporting.
 
 ## Installing these skills
 
@@ -15,7 +19,7 @@ Home for custom skills used by Codex CLI and Claude-based agents. Skills here de
 npx skills add btraut/skills
 ```
 
-Fallback: clone or place this repo in your agent's skills directory, such as `$CODEX_HOME/skills`.
+Fallback: clone this repo locally and wire up the subdirectories your agent expects from `skills/` and `plugins/`.
 
 ## Skill versioning
 Every skill directory includes a `VERSION` file containing the canonical SemVer for that skill.
@@ -27,7 +31,7 @@ Every skill directory includes a `VERSION` file containing the canonical SemVer 
 Quickly list local skill versions:
 
 ```bash
-for d in */; do
+for d in skills/*/ plugins/*/skills/*/; do
   [ -f "$d/VERSION" ] && printf "%-20s %s\n" "${d%/}" "$(cat "$d/VERSION")"
 done | sort
 ```
@@ -36,6 +40,7 @@ done | sort
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. The `beads-create` and `beads-implement` skills now detect whether the workspace is using classic Beads (`bd`) or beads_rust (`br`) and branch to the appropriate local skill or local CLI guidance instead of assuming one CLI.
 
 ## Changelog
+- 2026-04-10: Moved standalone skills under `skills/` so the repo layout cleanly separates standalone skills from plugin bundles in `plugins/`.
 - 2026-04-01: `beads-create` and `beads-implement` now detect `bd` vs `br` at runtime, keep `bd`-specific dotted-child guidance where it belongs, use `br`-specific workflow rules when the Rust tracker is installed, and prefer loaded local skills or local CLI help over web docs.
 - 2026-03-15: Added `agents/openai.yaml` for `brainstorm` and `review-team`, with `allow_implicit_invocation: false` so both skills require explicit invocation in Codex.
 - 2026-03-28: beads-implement now requires narrow sub-agent delegation, explicit main-agent authority over sequencing/closure/integration, and a review gate on each child bead before advancing; bumped `beads-implement` to `1.1.0`.
