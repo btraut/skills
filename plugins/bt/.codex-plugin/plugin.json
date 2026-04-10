@@ -2,5 +2,18 @@
   "name": "bt",
   "version": "0.1.0",
   "description": "BTraut workflow plugin with separate WHAT, HOW, work, and spitball skills.",
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "BT",
+    "shortDescription": "BTraut workflow skills",
+    "longDescription": "Personal workflow plugin with focused skills for planning, execution, and quick ideation.",
+    "developerName": "BTraut",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "brandColor": "#2563EB"
+  }
 }
