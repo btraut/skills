@@ -1,11 +1,10 @@
----
-name: bt:spitball
+name: bt:ideate
 description: Explore an idea through collaborative dialogue without committing to a requirements document. Use when the user wants to clarify their thinking, test directions, or talk through a possible feature or improvement without deciding yet whether it should become a full project.
 ---
 
-# bt:spitball
+# bt:ideate
 
-Use this skill to guide a user from a rough idea to a clearer understanding of what they might want. `bt:spitball` is for exploration, not durable artifact creation. It should help the user sharpen their thinking through focused questions, pressure-testing, and lightweight comparison of directions, then end with an in-chat summary and possible next steps.
+Use this skill to guide a user from a rough idea to a clearer understanding of what they might want. `bt:ideate` is for exploration, not durable artifact creation. It should help the user sharpen their thinking through focused questions, pressure-testing, and lightweight comparison of directions, then end with an in-chat summary and possible next steps.
 
 This skill does not write files. If the user wants something durable, move into a more formal requirements flow as a next step rather than creating files here.
 
@@ -80,7 +79,7 @@ Figure out whether context matters and how much structure the conversation actua
 
 3. **Check whether the user actually needs a more formal flow instead**
    - If the user is already converging on a real project, asking for durable requirements, or clearly wants something that could hand off to planning, note that a more formal requirements flow may be the better fit.
-   - Do not force the switch. Keep spitballing unless the user wants the more formal flow.
+   - Do not force the switch. Keep ideating unless the user wants the more formal flow.
 
 ### Phase 1: Explore the Idea
 
@@ -147,6 +146,6 @@ Give the user a clean choice between continuing exploration, formalizing the ide
 
 2. **Handle the selected option**
    - If the user selects `Keep exploring (Recommended)`, return to Phase 1 and continue with one question at a time.
-   - If the user selects `Turn this into bt:btrainstorm`, immediately run `bt:btrainstorm` in the current session using the clarified spitball summary as context. Do not write a file first.
-   - If the user selects `Move toward implementation`, start working directly in the current session using the finalized spitball summary as context. Do not force a handoff to another skill first.
+   - If the user selects `Turn this into bt:btrainstorm`, immediately run `bt:btrainstorm` in the current session using the clarified ideation summary as context. Do not write a file first.
+   - If the user selects `Move toward implementation`, start working directly in the current session using the finalized ideation summary as context. Do not force a handoff to another skill first.
    - If the user selects `Done for now`, end cleanly with the confirmed in-chat summary.
