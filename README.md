@@ -1,5 +1,7 @@
 # Codex / Claude Agent Skills
 
+> **Deprecated: no longer maintained.** This repository is out of date and retained for historical reference. Its skills and plugins are not recommended for new use.
+
 Home for custom skills used by Codex CLI and Claude-based agents. Skills here define workflows, utilities, and helpers that can be discovered by the agents at startup.
 
 ## What’s inside
@@ -40,6 +42,7 @@ done | sort
 Use beads for work that spans sessions, has dependencies, or needs durable context. Plans should link back to the bead (design field), while beads capture milestones and decisions in notes. For small, single-session work, skip beads and keep it lightweight. The `beads-create` and `beads-implement` skills now detect whether the workspace is using classic Beads (`bd`) or beads_rust (`br`) and branch to the appropriate local skill or local CLI guidance instead of assuming one CLI.
 
 ## Changelog
+- 2026-09-27: Deprecated the repository; its skills and plugins are no longer maintained.
 - 2026-04-10: Moved standalone skills under `skills/` so the repo layout cleanly separates standalone skills from plugin bundles in `plugins/`.
 - 2026-04-01: `beads-create` and `beads-implement` now detect `bd` vs `br` at runtime, keep `bd`-specific dotted-child guidance where it belongs, use `br`-specific workflow rules when the Rust tracker is installed, and prefer loaded local skills or local CLI help over web docs.
 - 2026-03-15: Added `agents/openai.yaml` for `brainstorm` and `review-team`, with `allow_implicit_invocation: false` so both skills require explicit invocation in Codex.
